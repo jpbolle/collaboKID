@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollaboKid - Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-client">
+    <div class="role-badge">Espace Apprenant</div>
+    <div class="container">
+        
+        <!-- Join View -->
+        <div id="view-join" class="glass-card">
+            <h1>CollaboKid 👋</h1>
+            <p>Donne ton surnom pour rejoindre la partie ! 🙂</p>
+            <input type="text" id="input-name" placeholder="Ton prénom..." autocomplete="off">
+            <button class="btn btn-primary" id="btn-join">C'est parti !</button>
+        </div>
+
+        <!-- Ready View -->
+        <div id="view-ready" class="glass-card hidden">
+            <h1>C'est prêt, <span id="display-name">...</span> !</h1>
+            <p>Tiens-toi prêt, l'animateur va lancer le quiz...</p>
+            <div class="waiting-animation">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring"></div>
+            </div>
+        </div>
+
+        <!-- Question View -->
+        <div id="view-question" class="glass-card hidden">
+            <h2 id="question-text">Question...</h2>
+            <div class="options-grid" id="options-container">
+                <!-- Options will appear here -->
+            </div>
+        </div>
+
+        <!-- Waiting for next step -->
+        <div id="view-wait" class="glass-card hidden">
+            <h1>Bien reçu ! 👍</h1>
+            <p>En attente de la suite...</p>
+            <div class="waiting-animation">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring"></div>
+            </div>
+        </div>
+
+        <!-- Final Result View -->
+        <div id="view-result" class="glass-card hidden">
+            <h1>Ton profil dominant</h1>
+            <h2 id="final-profile" style="color: #f472b6; margin: 1.5rem 0; font-size: 2.5rem;">...</h2>
+            <div class="profile-card" style="background: rgba(255,255,255,0.1); border: none;">
+                <p id="final-description" style="color: white; margin-bottom: 0;">Description...</p>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">Merci pour ta participation ! Je te souhaite une excellente découverte des outils numériques.</p>
+        </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+</body>
+</html>
